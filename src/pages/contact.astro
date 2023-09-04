@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+
+	<div class="index_container">
+			<h3 class="title">Contato</h3>
+			<div class="contact_container">
+                
+
+            </div>
+	</div>
+
+
+<style>
+	.title{
+		font-family: 'Koulen';
+		font-size: 96px;
+	}
+	.main_content_large_spacing{
+		letter-spacing: 16px;
+	}
+	.presentation_text{
+		align-self: flex-start;
+		font-size: 28px;
+		margin:  0 0 0 16px;
+	}
+	.contact_container{
+		display: flex;
+        width: 50%;
+        height: 400px;
+        background-color: #424242;
+        padding: 16px;
+        margin-bottom: 20px;
+		flex-direction: row;
+        border-radius: 15px;
+		justify-content: space-between;
+	}
+  
+	.index_container {
+        background-image: radial-gradient(var(--bg-primary), var(--bg-secondary));
+        padding: 16px;
+		color: white;
+		display: flex ;
+        flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+</style>

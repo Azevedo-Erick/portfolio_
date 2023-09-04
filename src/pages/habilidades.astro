@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Timeline from '../components/Timeline.astro';
+
+const habilidades = {
+    linguagens:[
+    {
+        name:"C#",
+        altName:"Csharp",
+        icon:""
+    },
+    {
+        name:"Java",
+        altName:"Java",
+        icon:""
+    },
+    {
+        name:"Javascript",
+        altName:"JS",
+        icon:""
+    },
+    {
+        name:"Typescript",
+        altName:"TS",
+        icon:""
+    },
+    {
+        name:"Rust",
+        altName:"PHP",
+        icon:""
+    },
+
+    {
+        name:"Dart",
+        altName:"Dart",
+        icon:""
+    },
+    ],
+    frameworks:[
+    {
+        name:"Vue",
+        altName:"VueJs",
+        icon:""
+    },
+
+    {
+        name:"Astro",
+        altName:"AstroJs",
+        icon:""
+    },
+
+    {
+        name:".Net Core",
+        altName:"DotNet Core",
+        icon:""
+    },
+
+    {
+        name:"Laravel",
+        altName:"Laravel",
+        icon:""
+    },
+
+    {
+        name:"Flutter",
+        altName:"Flutter",
+        icon:""
+    },
+    ],
+    ferramentas:[
+    {
+        name:"VsCode",
+        altName:"Visual Studio Code",
+        icon:""
+    },
+    {
+        name:"Inkscape",
+        altName:"Inkscape",
+        icon:""
+    },
+    {
+        name:"Figma",
+        altName:"Figma",
+        icon:""
+    },
+    {
+        name:"Docker",
+        altName:"Docker",
+        icon:""
+    },
+    ]
+}
+---
+
+
+	<div class="index_container">
+			<h3 class="title">Habilidades</h3>
+            {
+                
+			<div class="habilidades_container">
+                <div class="habilidades_container">
+                    <h2 class="habilidades_title"></h2>
+                    <div class="habilidades_container">
+                        <div class="habilidade_container">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+	</div>
+
+
+<style>
+	.title{
+		font-family: 'Koulen';
+		font-size: 96px;
+	}
+	.main_content_large_spacing{
+		letter-spacing: 16px;
+	}
+	.presentation_text{
+		align-self: flex-start;
+		font-size: 28px;
+		margin:  0 0 0 16px;
+	}
+  
+	.index_container {
+        background-image: radial-gradient(var(--bg-primary), var(--bg-secondary));
+
+
+
+        padding: 16px;
+		color: white;
+		display: flex ;
+        flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+</style>

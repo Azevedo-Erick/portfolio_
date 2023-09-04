@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Timeline from '../components/Timeline.astro';
+
+---
+
+
+	<div class="index_container">
+			<h3 class="title">Carreira</h3>
+			<div class="carreira_container">
+                
+    
+
+                    <Timeline />
+            </div>
+	</div>
+
+
+<style>
+	.title{
+		font-family: 'Koulen';
+		font-size: 96px;
+	}
+	.main_content_large_spacing{
+		letter-spacing: 16px;
+	}
+	.presentation_text{
+		align-self: flex-start;
+		font-size: 28px;
+		margin:  0 0 0 16px;
+	}
+  
+	.index_container {
+        background-image: radial-gradient(var(--bg-primary), var(--bg-secondary));
+
+
+
+        padding: 16px;
+		color: white;
+		display: flex ;
+        flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+</style>

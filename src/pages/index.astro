@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import About from './about.astro'
+import Contact from './contact.astro'
+import Carreira from './carreira.astro';
+import Habilidades from './habilidades.astro';
+---
+
+<Layout title="Azevedo-Erick">
+
+	<div class="index_container">
+		<div class="personal_description_container">
+			<h3 class="presentation_text">Oi👋 me chamo <span class="name_enphasis">Erick</span></h3>
+			<div class="main_content_container">
+			
+				<h1>
+					<span class="main_content_icons">
+
+						Backend
+						<ul class="main_icons_list">
+							<li>
+								<a><i class="fa-brands fa-linkedin"></i></a>
+							</li>
+							<li>
+								<a><i class="fa-brands fa-github"></i></i></a>
+							</li>
+							<li>
+								<a><i class="fa-solid fa-file"></i></a></a>
+							</li>
+						</ul>	
+				</span>
+					<span class="main_content_large_spacing">developer</span></h1>
+					
+		
+				<h5 class="personal_description">Tenho 20 anos e 2 de experiência 
+					como desenvolvedor fullstack</h5>
+		</div>
+	</div>
+</div>
+<About />
+<Carreira />
+<Habilidades/>
+<Contact/>
+
+</Layout>
+
+<style>
+	.personal_description_container{
+		font-family: 'Koulen';
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.main_content_large_spacing{
+		letter-spacing: 16px;
+	}
+	.presentation_text{
+		align-self: flex-start;
+		font-size: 28px;
+		margin:  0 0 0 16px;
+	}
+	.name_enphasis{
+		color: #7C6AED;
+	}
+	.personal_description{
+		font-family: 'Oxanium', Courier, monospace;
+	}
+	.main_content_container{
+		display: grid;
+		flex-direction: column;
+		justify-content: center;
+		font-family: 'Koulen';
+		align-items: center;
+	}
+	.main_content_container>h1{
+		text-decoration: none;
+		
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		font-size: 9.5rem;
+		
+	}
+	.main_content_container h1>.main_content_icons{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.main_icons_list  li a i {
+		font-size: 46px;
+		margin: auto 16px;
+		cursor: pointer;
+	}
+	.main_content_container ul{
+		list-style: none;
+		display: flex;
+		font-size: 28px;
+
+		flex-direction: row;
+	}
+	.index_container {
+		background-image: radial-gradient(var(--bg-primary), var(--bg-secondary));
+		color: white;
+		display: flex ;
+		min-height: 100vh;
+		justify-content: center;
+		align-items: center;
+	}
+	.layout-container{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+</style>

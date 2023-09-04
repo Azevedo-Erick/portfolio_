@@ -1,0 +1,249 @@
+--- 
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="/reset.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Chivo&family=Kantumruy+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Koulen&family=Montserrat&family=Oxanium:wght@500&family=Saira:wght@500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+          
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<nav class="navbar">
+			<ul class="navbar-nav">
+				<li class="logo">
+					<a href="" class="nav-link">
+						<span class="link-text">Azevedo-Erick</span>
+						<i class="fa-sharp fa-solid fa-angles-right"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="fa-solid fa-house fa-secondary"></i>
+						<span class="link-text">
+							Inicio
+						</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="$" class="nav-link">
+						<i class="fa-sharp fa-solid fa-id-badge fa-secondary"></i>
+						<span class="link-text">Sobre mim</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="$" class="nav-link">
+						<i class="fa-solid fa-timeline"></i>
+
+						<span class="link-text">Carreira</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="$" class="nav-link">
+						<i class="fa-solid fa-book fa-secondary"></i>
+						<span class="link-text">Habilidades</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="$" class="nav-link">
+						<i class="fa-solid fa-flask-vial"></i>
+
+						<span class="link-text">Projetos</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="$" class="nav-link">
+						<i class="fa-solid fa-message"></i>
+						<span class="link-text">Contato</span>
+					</a>
+				</li>
+				
+
+				
+			</ul>
+		</nav>
+		<main>
+
+			<slot />
+		</main>
+		<footer>
+			By Erick Azevedo with AstroJs
+		</footer>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		font-size: 16px;
+		font-family: 'Open Sans';
+		margin: 0;
+		--bg-primary: #23232e;
+		--bg-secondary: #141418;
+		--text-primary:  #b6b6b6;
+		--text-secondary: #ececec;
+		--transition-speed: 600ms;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+	}
+	.nav-item{
+		width: 100%;
+	}
+	nav{
+		font-family:'Koulen';
+	}
+	.navbar-nav{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.logo{
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+		text-align: center;
+		color: var(--text-secondary);
+		background-color: var(--bg-secondary);
+		font-size: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.3ch;
+		width: 100%
+	}
+	.logo span{
+		padding-left: 16px;
+	}
+	.logo i{
+		transform: rotate(0deg);
+		transition: var(--transition-speed);
+	}
+	.navbar:hover .logo i {
+		transform: rotate(-180deg);
+	}
+	.nav-link{ 
+		display: flex;
+		align-items: center;
+		height: 5rem;
+		color: var(--text-primary);
+		text-decoration: none;
+		filter: grayscale(100%) opacity(0.7);
+		transition: var(--transition-speed);
+	}
+	.nav-link:hover{
+		filter: grayscale(0%) opacity(1);
+		background-color: var(--bg-secondary);
+		color: var(--text-secondary);
+	}
+	.link-text{
+		display: none;
+	}
+	.nav-link i{
+		min-width: 2rem;
+		font-size: 24px;
+		margin: 0 1.5rem;
+	}
+	.navbar:hover .link-text{
+		display: block;
+	}
+	body::-webkit-scrollbar{
+		width: 0.25rem;
+	}
+	body::-webkit-scrollbar-track{
+		background-color: #1e1e24;
+	}
+	body::-webkit-scrollbar-thumb{
+		background-color: #6649b8;
+	}
+	.navbar{
+		position: fixed;
+		background-color: var(--bg-primary);
+		transition: width 200ms ease;
+	}
+	.fa-primary{
+		color: #ff7eee;
+	}
+	.fa-secondary{
+		color: #ff7eee;
+	}
+	.fa-primary,
+.fa-secondary{
+	transition: var(--transition-speed);
+}
+	main{
+		margin-left: 5rem;
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151A;
+		background-size: 224px;
+	}
+	body {
+		padding: 0;
+		margin: 0;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+	footer{
+		margin-left: 5rem;
+		padding: 16px;
+		height: 16px;
+		background: #13151A;
+		color: #fff;
+	}
+	@media only screen and (max-width: 600px){
+		.navbar{
+			bottom: 0;
+			width: 100vw;
+			height: 5rem;
+		}
+		.logo{
+			display: none;
+		}
+		.navbar-nav{
+			flex-direction: row;
+		}
+		.nav-link{
+			justify-content: center;
+		}
+		main{
+			margin:0;
+		}
+	}
+	@media only screen and (min-width: 600px){
+		.navbar{
+			top: 0;
+			width: 5rem;
+			height: 100vh;
+		}
+		.navbar:hover{
+			width: 16rem;
+		}
+		.navbar:hover .link-text{
+			display: inline;
+			transition: opacity: var(--transition-speed);;
+		}
+	}
+</style>
