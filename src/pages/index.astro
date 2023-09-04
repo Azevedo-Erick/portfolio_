@@ -5,10 +5,62 @@ import About from './about.astro'
 import Contact from './contact.astro'
 import Carreira from './carreira.astro';
 import Habilidades from './habilidades.astro';
+import Particles from "astro-particles"
+import type { ISourceOptions } from "tsparticles-engine";
+
+export const options: ISourceOptions = {
+	fullScreen:{
+		enable:false,
+		zIndex: 1,
+	},
+	
+    particles: {
+        number: {
+            value: 100,
+        },
+        links: {
+            distance: 125,
+            enable: true,
+            triangles: {
+                enable: true,
+                opacity: 0.1,
+            },
+        },
+        move: {
+            enable: true,
+            speed: 2,
+        },
+        size: {
+            value: 1,
+        },
+        shape: {
+            type: "circle",
+        },
+    },
+};
 ---
 
-<Layout title="Azevedo-Erick">
+<script>
+    import { type Container, type Engine, tsParticles } from "tsparticles-engine";
+    import { loadFull } from "tsparticles";
 
+
+	// @ts-ignore
+    window.particlesInit = async function (engine: Engine) {
+        await loadFull(engine);
+    }
+    
+
+	// @ts-ignore
+    window.particlesLoaded = function (container: Container) {
+        console.log("particlesLoaded callback");
+    }
+</script>
+
+<Layout title="Azevedo-Erick">
+	
+
+		<Particles   id="tsparticles" options={options} init="particlesInit"  class="particles_wrapper" />
 	<div class="index_container">
 		<div class="personal_description_container">
 			<h3 class="presentation_text">Oi👋 me chamo <span class="name_enphasis">Erick</span></h3>
@@ -37,6 +89,7 @@ import Habilidades from './habilidades.astro';
 					como desenvolvedor fullstack</h5>
 		</div>
 	</div>
+	</div>
 </div>
 <About />
 <Carreira />
@@ -52,6 +105,7 @@ import Habilidades from './habilidades.astro';
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		z-index: 1;
 	}
 	.main_content_large_spacing{
 		letter-spacing: 16px;
@@ -80,7 +134,6 @@ import Habilidades from './habilidades.astro';
 		margin: 0;
 		display: flex;
 		flex-direction: column;
-		font-size: 9.5rem;
 		
 	}
 	.main_content_container h1>.main_content_icons{
@@ -108,10 +161,28 @@ import Habilidades from './habilidades.astro';
 		justify-content: center;
 		align-items: center;
 	}
+	.particles_wrapper{
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
 	.layout-container{
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 		height: 100%;
+	}
+	@media only screen and (max-width: 600px){
+	
+		.main_content_container>h1{
+		font-size: 13.5vw;
+		
+	}
+	}
+	@media only screen and (min-width: 600px){
+		.main_content_container>h1{
+		font-size: 9.5rem;
+		
+	}
 	}
 </style>

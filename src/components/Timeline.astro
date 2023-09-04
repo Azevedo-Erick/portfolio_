@@ -25,9 +25,9 @@ const experiences = [
 
 <ul class="timeline_container">
 
-    { experiences.map((e)=>{
+    { experiences.map((e,i)=>{
         return   <li>
-    <span class="date_container">{e.time}</span>
+    
     <div class="circle-wrapper">
         <div class="circle">
             {
@@ -35,13 +35,14 @@ const experiences = [
             }
         </div>
     </div>
-    <div class="timeline_content_container">
+    <div class={"timeline_content_container"}>
         <div class="timeline_icon">
      
         </div>
     <p class="timeline_title">{e.title}</p>
 
       <p class="timeline_description">{e.description }</p>
+      <span class="date_container">{e.time}</span>
     </div>
   </li>
     })}
@@ -49,10 +50,10 @@ const experiences = [
 
 </ul>
 <style>
-    .timeline_icon{
+  .timeline_icon{
         margin-left: auto;
         font-size: 28px;
-    }
+  }
   .date_container {
     margin: 0 16px 0 auto;
     font-family: "Chivo", sans-serif;

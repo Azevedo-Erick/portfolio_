@@ -1,142 +1,218 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Timeline from '../components/Timeline.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Timeline from "../components/Timeline.astro";
 
-const habilidades = {
-    linguagens:[
-    {
-        name:"C#",
-        altName:"Csharp",
-        icon:""
-    },
-    {
-        name:"Java",
-        altName:"Java",
-        icon:""
-    },
-    {
-        name:"Javascript",
-        altName:"JS",
-        icon:""
-    },
-    {
-        name:"Typescript",
-        altName:"TS",
-        icon:""
-    },
-    {
-        name:"Rust",
-        altName:"PHP",
-        icon:""
-    },
-
-    {
-        name:"Dart",
-        altName:"Dart",
-        icon:""
-    },
-    ],
-    frameworks:[
-    {
-        name:"Vue",
-        altName:"VueJs",
-        icon:""
-    },
-
-    {
-        name:"Astro",
-        altName:"AstroJs",
-        icon:""
-    },
-
-    {
-        name:".Net Core",
-        altName:"DotNet Core",
-        icon:""
-    },
-
-    {
-        name:"Laravel",
-        altName:"Laravel",
-        icon:""
-    },
-
-    {
-        name:"Flutter",
-        altName:"Flutter",
-        icon:""
-    },
-    ],
-    ferramentas:[
-    {
-        name:"VsCode",
-        altName:"Visual Studio Code",
-        icon:""
-    },
-    {
-        name:"Inkscape",
-        altName:"Inkscape",
-        icon:""
-    },
-    {
-        name:"Figma",
-        altName:"Figma",
-        icon:""
-    },
-    {
-        name:"Docker",
-        altName:"Docker",
-        icon:""
-    },
-    ]
+interface Habilidade {
+  name: string;
+  altName: string;
+  icon: string;
 }
+
+interface HabilidadesObj {
+  linguagens: Habilidade[];
+  frameworks: Habilidade[];
+  ferramentas: Habilidade[];
+}
+const habilidades: HabilidadesObj = {
+  linguagens: [
+    {
+      name: "C#",
+      altName: "Csharp",
+      icon: "devicon-csharp-plain colored",
+    },
+    {
+      name: "Java",
+      altName: "Java",
+      icon: "devicon-java-plain  colored",
+    },
+    {
+      name: "Javascript",
+      altName: "JS",
+      icon: "devicon-javascript-plain colored",
+    },
+    {
+      name: "Typescript",
+      altName: "TS",
+      icon: "devicon-typescript-plain colored",
+    },
+    {
+      name: "Rust",
+      altName: "Rust",
+      icon: "devicon-rust-plain",
+    },
+    {
+      name: "PHP",
+      altName: "php",
+      icon: "devicon-php-plain colored",
+    },
+    {
+      name: "Dart",
+      altName: "Dart",
+      icon: "devicon-dart-plain colored",
+    },
+    {
+      name: "Bash",
+      altName: "bash",
+      icon: "devicon-bash-plain colored",
+    },
+  ],
+  frameworks: [
+    {
+      name: "Vue",
+      altName: "VueJs",
+      icon: "devicon-vuejs-plain colored",
+    },
+
+
+
+    {
+      name: ".Net Core",
+      altName: "DotNet Core",
+      icon: "devicon-dotnetcore-plain colored",
+    },
+
+    {
+      name: "Laravel",
+      altName: "Laravel",
+      icon: "devicon-laravel-plain colored",
+    },
+
+    {
+      name: "Flutter",
+      altName: "Flutter",
+      icon: "devicon-flutter-plain colored",
+    },
+  ],
+  ferramentas: [
+    {
+      name: "VsCode",
+      altName: "Visual Studio Code",
+      icon: "devicon-vscode-plain colored",
+    },
+    {
+      name: "Inkscape",
+      altName: "Inkscape",
+      icon: "devicon-inkscape-plain",
+    },
+    {
+      name: "Figma",
+      altName: "Figma",
+      icon: "devicon-figma-plain colored",
+    },
+    {
+      name: "Docker",
+      altName: "Docker",
+      icon: "devicon-docker-plain colored",
+    },
+    {
+      name: "Linux",
+      altName: "Linux",
+      icon: "devicon-linux-plain",
+    },
+    {
+      name: "JetBrains",
+      altName: "JetBrains",
+      icon: "devicon-jetbrains-plain colored",
+    },
+    
+  ],
+};
 ---
 
+<div class="index_container">
+  <h3 class="title">Habilidades</h3>
 
-	<div class="index_container">
-			<h3 class="title">Habilidades</h3>
-            {
-                
-			<div class="habilidades_container">
-                <div class="habilidades_container">
-                    <h2 class="habilidades_title"></h2>
-                    <div class="habilidades_container">
-                        <div class="habilidade_container">
-
-                        </div>
-                    </div>
+  {
+    (Object.keys(habilidades) as (keyof HabilidadesObj)[]).map((e) => {
+      const itensCategoria: Habilidade[] = habilidades[e];
+      return (
+        <div class="habilidades_container">
+          <h2 class="habilidades_title">{e}</h2>
+          <div class="habilidades_wrapper">
+            {itensCategoria.map((element) => {
+              return (
+                <div class="habilidade_container">
+                  <i class={element.icon + " habilidade_icon"} />
+                  <p class="habilidade_name">{element.name}</p>
                 </div>
-            </div>
-        }
-
-	</div>
-
+              );
+            })}
+          </div>
+        </div>
+      );
+    })
+  }
+</div>
 
 <style>
-	.title{
+  .habilidade_name {
+    font-size: 22px;
+    margin: auto 0 auto;
+  }
+  .habilidade_icon {
+    margin: auto 0 auto;
+
+    font-size: 56px;
+  }
+  .habilidades_title{
+    font-size: 28px;
+    margin: 8px;
 		font-family: 'Koulen';
-		font-size: 96px;
-	}
-	.main_content_large_spacing{
-		letter-spacing: 16px;
-	}
-	.presentation_text{
-		align-self: flex-start;
-		font-size: 28px;
-		margin:  0 0 0 16px;
-	}
-  
-	.index_container {
-        background-image: radial-gradient(var(--bg-primary), var(--bg-secondary));
 
 
+  }
+  .habilidades_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 
-        padding: 16px;
-		color: white;
-		display: flex ;
-        flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
+    text-align: center;
+    padding: 8px;
+  }
+  .habilidades_wrapper {
+    display: flex;
+    width: 100%;
+    padding: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .habilidade_container {
+    width: 150px;
+    height: 170px;
+    background-color: #040411;
+    border-radius: 10px;
+    padding: 2%;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .title {
+    font-family: "Koulen";
+    font-size:  var(--title-font-size);
+  }
+  .main_content_large_spacing {
+    letter-spacing: 16px;
+  }
+  .presentation_text {
+    align-self: flex-start;
+    font-size: 28px;
+    margin: 0 0 0 16px;
+  }
+
+  .index_container {
+    background-image: radial-gradient(var(--bg-primary), var(--bg-secondary));
+
+    padding: 16px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
