@@ -8,74 +8,84 @@
 // const { href, title, body } = Astro.props;
 const experiences = [
   {
-    time: "09/2020 a 02/2022",
+    time: "08/2020 - Atual",
+    title: "Universidade Estadual do Tocantins",
+    description: "Graduação em Sistemas de Informação",
+    type: "Educacional",
+  },
+  {
+    time: "03/2022 - Atual",
     title: "Tribunal de Contas do Estado do Tocantins",
     description:
       "Estágio em desenvolvimento de software utilizando PHP e ExtJs",
     type: "Profissional",
   },
   {
-    time: "09/2020 a 02/2022",
+    time: "09/2022 - 02/2023",
+    title: "Núcleo de Inovação Técnologica da UNITINS",
+    description: "Bolsa em desenvolvimento de software com C# e VueJs",
+    type: "Profissional",
+  },
+  {
+    time: "09/2023 - 12/2023",
     title: "Universidade Estadual do Tocantins",
-    description: "Graduação em Sistemas de Informação",
+    description: "Monitoria da disciplina de Estruturas de Dados.",
     type: "Educacional",
   },
 ];
 ---
 
 <ul class="timeline_container">
+  {
+    experiences.map((e, i) => {
+      return (
+        <li>
+          <div class="circle-wrapper">
+            <div class="circle">
+              {e.type === "Profissional" ? (
+                <i class="fa-solid fa-suitcase icon_professional_experience" />
+              ) : (
+                <i class="fa-solid fa-scroll icon_educacional_experience" />
+              )}
+            </div>
+          </div>
+          <div class={"timeline_content_container"}>
+            <div class="timeline_icon" />
+            <p class="timeline_title">{e.title}</p>
 
-    { experiences.map((e,i)=>{
-        return   <li>
-    
-    <div class="circle-wrapper">
-        <div class="circle">
-            {
-                e.type ==="Profissional"? <i class="fa-solid fa-suitcase icon_professional_experience"></i>:     <i class="fa-solid fa-scroll icon_educacional_experience"></i>
-            }
-        </div>
-    </div>
-    <div class={"timeline_content_container"}>
-        <div class="timeline_icon">
-     
-        </div>
-    <p class="timeline_title">{e.title}</p>
-
-      <p class="timeline_description">{e.description }</p>
-      <span class="date_container">{e.time}</span>
-    </div>
-  </li>
-    })}
-
-
+            <p class="timeline_description">{e.description}</p>
+            <span class="date_container">{e.time}</span>
+          </div>
+        </li>
+      );
+    })
+  }
 </ul>
 <style>
-  .timeline_icon{
-        margin-left: auto;
-        font-size: 28px;
+  .timeline_icon {
+    margin-left: auto;
+    font-size: 28px;
   }
   .date_container {
     margin: 0 16px 0 auto;
     font-family: "Chivo", sans-serif;
   }
-  .icon_professional_experience{
-    color: #FFC940;
+  .icon_professional_experience {
+    color: #ffc940;
   }
-  .icon_educacional_experience{
-    color: #003BDD;
+  .icon_educacional_experience {
+    color: #003bdd;
   }
-  .timeline_title{
+  .timeline_title {
     margin-bottom: auto;
-    font-family: 'Saira', sans-serif;
+    font-family: "Saira", sans-serif;
     font-size: 22px;
-
   }
-  .timeline_description{
+  .timeline_description {
     margin-bottom: auto;
     font-family: "Chivo", sans-serif;
 
     font-size: 16px;
-
   }
   .timeline_content_container {
     margin-right: auto;
@@ -86,13 +96,16 @@ const experiences = [
     height: 150px;
     z-index: 0;
     background-color: #040411;
-    border-radius: 0 15px 15px 0 ;
+    border-radius: 0 15px 15px 0;
     margin: 16px 0;
     border-left: #000 solid 4px;
   }
   .timeline_container {
     display: flex;
-    flex-direction: column;
+    min-height: 350px;
+    padding: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   .timeline_container li {
     display: flex;
@@ -110,24 +123,23 @@ const experiences = [
     background-color: #040411;
     z-index: 1;
   }
-  .circle-wrapper{
+  .circle-wrapper {
     height: 100%;
     position: relative;
     right: -20px;
     display: flex;
     justify-content: center;
     align-items: center;
-   
   }
 
-  @media only screen and (max-width: 600px){
+  @media only screen and (max-width: 600px) {
     .timeline_content_container {
-    width: 250px;
+      width: 250px;
+    }
   }
-}
-@media only screen and (min-width: 600px){
-  .timeline_content_container {
-    width: 300px;
+  @media only screen and (min-width: 600px) {
+    .timeline_content_container {
+      width: 300px;
+    }
   }
-}
 </style>

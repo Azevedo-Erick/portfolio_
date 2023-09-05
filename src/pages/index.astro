@@ -7,23 +7,27 @@ import Carreira from './carreira.astro';
 import Habilidades from './habilidades.astro';
 import Particles from "astro-particles"
 import type { ISourceOptions } from "tsparticles-engine";
+import Projetos from './projetos.astro';
 
 export const options: ISourceOptions = {
 	fullScreen:{
 		enable:false,
 		zIndex: 1,
 	},
-	
+	background:{
+		color: "#000000",
+		opacity: 0.1
+	},
     particles: {
         number: {
             value: 100,
         },
         links: {
-            distance: 125,
+            distance: 90,
             enable: true,
             triangles: {
                 enable: true,
-                opacity: 0.1,
+                opacity: 0.05,
             },
         },
         move: {
@@ -59,11 +63,12 @@ export const options: ISourceOptions = {
 
 <Layout title="Azevedo-Erick">
 	
-
-		<!-- <Particles   id="tsparticles" options={options} init="particlesInit"  class="particles_wrapper" /> -->
+	<div  id="tsparticles"  class="particles_wrapper" >
+		<Particles  id="tsparticles"  options={options} init="particlesInit"  />
+	</div>
 	<div class="index_container">
 		<div class="personal_description_container">
-			<h3 class="presentation_text">Oi👋 me chamo <span class="name_enphasis">Erick</span></h3>
+			<h3 class="presentation_text">Oi👋 me chamo <span class="name_enphasis">Erick Azevedo</span></h3>
 			<div class="main_content_container">
 			
 				<h1>
@@ -72,13 +77,13 @@ export const options: ISourceOptions = {
 						Backend
 						<ul class="main_icons_list">
 							<li>
-								<a><i class="fa-brands fa-linkedin"></i></a>
+								<a href="https://linkedin.com/in/azevedo-erick" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
 							</li>
 							<li>
-								<a><i class="fa-brands fa-github"></i></i></a>
+								<a href="https://github.com/azevedo-erick" target="_blank"><i class="fa-brands fa-github"></i></i></a>
 							</li>
 							<li>
-								<a><i class="fa-solid fa-file"></i></a></a>
+								<a href="/portifolio_/vitae.pdf" target="_blank"><i class="fa-solid fa-file"></i></a></a>
 							</li>
 						</ul>	
 				</span>
@@ -94,6 +99,8 @@ export const options: ISourceOptions = {
 <About />
 <Carreira />
 <Habilidades/>
+<!-- <Projetos/> -->
+
 <Contact/>
 
 </Layout>
@@ -144,6 +151,7 @@ export const options: ISourceOptions = {
 	.main_icons_list  li a i {
 	
 		cursor: pointer;
+		transition: 300ms;
 	}
 	.main_content_container ul{
 		list-style: none;
@@ -157,12 +165,21 @@ export const options: ISourceOptions = {
 		color: white;
 		display: flex ;
 		min-height: 100vh;
+		z-index: 1;
 		justify-content: center;
 		align-items: center;
+	}
+	.main_icons_list  li a i:hover{
+		opacity: 0.4;
 	}
 	.particles_wrapper{
 		width: 100%;
 		height: 100%;
+		position: absolute;
+		right: 0;
+		background-color: rgba(0, 0, 0, 0.2);
+		
+		top: 0;
 		z-index: 0;
 	}
 	.layout-container{
