@@ -1,73 +1,91 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
 ---
 
+<div class="index_container">
+  <h3 class="title">Sobre mim</h3>
+  <div class="main_content_container">
+    <div class="main_content_card"></div>
+    <div class="main_content_text">
+      <p>
+        Olá pessoa! Meu nome é Erick Azevedo Sousa, tenho 20 anos e eu sou um
+        estudante de Sistemas de Informação.
+      </p>
+      <p>
+        Gosto do desafio de criar soluções criativas e funcionais para resolver
+        problemas.
+      </p>
+      <p>
+        Gosto de conversar a respeito de novas tecnologias e busco sempre
+        aprender novas habilidades e conceitos. Em particular, estou me
+        concentrando em aprimorar minhas habilidades em backend, mas sempre
+        buscando me aventurar em tudo o que a área de tecnologia tem a me
+        oferecer.
+      </p>
+      <p>
+        Você pode me encontrar em minhas principais redes sociais na seção de
+        contato. Obrigado pela visita e mal posso esperar para conversar com
+        você!
+      </p>
+    </div>
+  </div>
+</div>
 
-	<div class="index_container">
-			<h3 class="title">Sobre mim</h3>
-			<div class="main_content_container">
-                  <div class="main_content_card"></div>  
-                  <div class="main_content_text">
-                    <p>Olá pessoa! Meu nome é Erick Azevedo Sousa, tenho 20 anos e eu sou um estudante de Sistemas de Informação. </p>
-                    <p>Gosto do desafio de criar soluções criativas e funcionais para resolver problemas.</p>
-                    <p>Gosto de conversar a respeito de novas tecnologias e busco sempre aprender novas habilidades e conceitos. 
-                        Em particular, estou me concentrando em aprimorar minhas habilidades em backend, mas sempre buscando me aventurar
-                        em tudo o que a área de tecnologia tem a me oferecer.</p>
-                    <p>Você pode me encontrar em minhas principais redes sociais na seção de contato. 
-                        Obrigado pela visita e mal posso esperar para conversar com você!</p>
-                </div>  
-
-            </div>
-	</div>
-   
 <style>
-  
-	.title{
-		font-family: 'Koulen';
-		font-size:  var(--title-font-size);
-
+  .title {
+    font-family: "Koulen";
+    font-size: var(--title-font-size);
+  }
+  .main_content_large_spacing {
+    letter-spacing: 16px;
+  }
+  .presentation_text {
+    align-self: flex-start;
+    font-size: 28px;
+    margin: 0 0 0 16px;
+  }
+  .name_enphasis {
+    color: #7c6aed;
+  }
+  .personal_description {
+    font-family: "Oxanium", Courier, monospace;
+  }
+  .main_content_container {
+    display: flex;
+    width: 70%;
+    padding: 16px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .main_content_card {
+    width: 35%;
+    border-radius: 15px;
+    margin-right: 16px;
+    height: 450px;
+    display: flex;
+    background-color: #7c6aed;
+  }
+  .main_content_text {
+    font-size: 20px;
+	text-align: justify;
+    font-family: "Kantumruy Pro", sans-serif;
+  }
+  .index_container {
+    background-color: #383f7d;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media only screen and (max-width: 600px) {
+    .main_content_card{
+		display: none;
 	}
-	.main_content_large_spacing{
-		letter-spacing: 16px;
-	}
-	.presentation_text{
-		align-self: flex-start;
-		font-size: 28px;
-		margin:  0 0 0 16px;
-	}
-	.name_enphasis{
-		color: #7C6AED;
-	}
-	.personal_description{
-		font-family: 'Oxanium', Courier, monospace;
-	}
-	.main_content_container{
-		display: flex;
-        width: 70%;
-        padding: 16px;
-		flex-direction: row;
-		justify-content: space-between;
-	}
-    .main_content_card {
-        width: 35%;
-        border-radius: 15px;
-        margin-right: 16px;
-        height: 450px;
-        display: flex;
-        background-color: #7C6AED;
-    }
+  }
+  @media only screen and (min-width: 600px) {
     .main_content_text{
-        font-size: 20px;
-        width: 50%;
-        font-family: 'Kantumruy Pro', sans-serif;
-    }
-	.index_container {
-		background-color: #383F7D;
-		color: white;
-		display: flex ;
-        flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		width: 80%;
 	}
+  }
 </style>

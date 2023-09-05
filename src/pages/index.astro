@@ -60,7 +60,7 @@ export const options: ISourceOptions = {
 <Layout title="Azevedo-Erick">
 	
 
-		<Particles   id="tsparticles" options={options} init="particlesInit"  class="particles_wrapper" />
+		<!-- <Particles   id="tsparticles" options={options} init="particlesInit"  class="particles_wrapper" /> -->
 	<div class="index_container">
 		<div class="personal_description_container">
 			<h3 class="presentation_text">Oi👋 me chamo <span class="name_enphasis">Erick</span></h3>
@@ -102,6 +102,7 @@ export const options: ISourceOptions = {
 	.personal_description_container{
 		font-family: 'Koulen';
 		display: flex;
+		padding: 8px;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -142,7 +143,6 @@ export const options: ISourceOptions = {
 		align-items: center;
 	}
 	.main_icons_list  li a i {
-		font-size: 46px;
 		margin: auto 16px;
 		cursor: pointer;
 	}
@@ -178,11 +178,17 @@ export const options: ISourceOptions = {
 		font-size: 13.5vw;
 		
 	}
+	.main_icons_list  li a i {
+		font-size: 26px;
+	}
 	}
 	@media only screen and (min-width: 600px){
 		.main_content_container>h1{
 		font-size: 9.5rem;
 		
+	}
+	.main_icons_list  li a i {
+		font-size: 46px;
 	}
 	}
 </style>
