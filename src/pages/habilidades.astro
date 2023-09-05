@@ -174,17 +174,19 @@ const habilidades: HabilidadesObj = {
   }
   .habilidades_wrapper {
     display: flex;
-    width: 100%;
+    width: 90%;
     padding: 16px;
     flex-direction: row;
+    border-radius: 15px;
     flex-wrap: wrap;
+    background-color: #010105;
   }
   .habilidade_container {
     width: 150px;
     height: 170px;
     background-color: #040411;
     border-radius: 10px;
-    padding: 2%;
+  
     margin: 8px;
     display: flex;
     flex-direction: column;
@@ -214,5 +216,18 @@ const habilidades: HabilidadesObj = {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  @media only screen and (max-width: 600px){
+	  .habilidades_wrapper {
+    width: 97%;
+    margin: 0 32px;
+  }
+   
+}
+@media only screen and (min-width: 600px){
+      .habilidades_wrapper {
+        width: 90%;
+        margin: 8px;
   }
 </style>

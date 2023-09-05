@@ -80,13 +80,12 @@ const experiences = [
   .timeline_content_container {
     margin-right: auto;
     padding: 24px;
-    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 150px;
     z-index: 0;
-    background-color: grey;
+    background-color: #040411;
     border-radius: 0 15px 15px 0 ;
     margin: 16px 0;
     border-left: #000 solid 4px;
@@ -108,7 +107,7 @@ const experiences = [
     align-items: center;
     justify-content: center;
     border: 3px solid #000;
-    background-color: #797979;
+    background-color: #040411;
     z-index: 1;
   }
   .circle-wrapper{
@@ -121,5 +120,14 @@ const experiences = [
    
   }
 
-
+  @media only screen and (max-width: 600px){
+    .timeline_content_container {
+    width: 250px;
+  }
+}
+@media only screen and (min-width: 600px){
+  .timeline_content_container {
+    width: 300px;
+  }
+}
 </style>
