@@ -1,51 +1,97 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
-
-	<div class="index_container">
-			<h3 class="title">Contato</h3>
-			<div class="contact_container">
-                
-
-            </div>
-	</div>
-
+<div class="contato_container" id="contato">
+  <h3 class="title">Contato</h3>
+  <div class="contact_container">
+    <p class="contact_text">
+      Interessado em uma conversa animada? Vamos nessa! Seja sobre trabalho,
+      programação, bitcoin, jogos, ou qualquer outro assunto, estou pronto para
+      ação. Confira minhas redes sociais abaixo e me chame para um papo legal.
+      Mal posso esperar para trocar ideias contigo!
+    </p>
+    <div class="icons_container">
+      <ul>
+        <li>
+          <a href="https://linkedin.com/in/azevedo-erick" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/azevedo-erick" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:azeve.erick@outlook.com?subject=Interesse%20no%20seu%20perfil%20pelo%20meu%20portfólio&body=Olá%20Erick,%0D%0A%0D%0AEu recentemente vi o seu portfólio e fiquei muito interessado no seu trabalho. Gostaria de discutir oportunidades de colaboração ou possíveis projetos juntos.%0D%0A%0D%0AAtenciosamente,%0D%0A[Seu Nome]"
+          >
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <style>
-	.title{
-		font-family: 'Koulen';
-		font-size:  var(--title-font-size);
+  .title {
+    font-family: "Koulen";
+    font-size: var(--title-font-size);
+  }
+  .contact_text {
+    font-family: "Kantumruy Pro", sans-serif;
+    font-size: 22px;
+    text-align: justify;
+  }
+  .contact_container {
+    display: flex;
+    flex-direction: column;
+    background-color: #131313;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    justify-content: space-between;
+  }
+  .icons_container ul {
+	display: flex;
+	justify-content: space-between;
+	padding: 16px;
+	flex-direction: row;
+  }
+  .icons_container li a:active,
+  .icons_container li a:visited,
+  .icons_container li a:link {
+    color: #fff;
+  }
+  .contato_container {
+    background-image: radial-gradient(var(--bg-primary), var(--bg-secondary));
+    padding: 16px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-	}
-	.main_content_large_spacing{
-		letter-spacing: 16px;
-	}
-	.presentation_text{
-		align-self: flex-start;
-		font-size: 28px;
-		margin:  0 0 0 16px;
-	}
-	.contact_container{
-		display: flex;
-        width: 50%;
-        height: 400px;
-        background-color: #424242;
-        padding: 16px;
-        margin-bottom: 20px;
-		flex-direction: row;
-        border-radius: 15px;
-		justify-content: space-between;
-	}
-  
-	.index_container {
-        background-image: radial-gradient(var(--bg-primary), var(--bg-secondary));
-        padding: 16px;
-		color: white;
-		display: flex ;
-        flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
+  @media only screen and (max-width: 600px){
+	 .icons_container {
+    font-size: 36px;
+	
+  }
+  .contact_container {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 600px){
+ .icons_container {
+    font-size: 56px;
+	
+  }
+  .contact_container {
+    width: 30%;
+  }
+}
 </style>

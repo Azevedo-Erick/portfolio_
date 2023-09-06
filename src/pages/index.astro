@@ -99,9 +99,9 @@ export const options: ISourceOptions = {
 	</div>
 	</div>
 </div>
-<About />
-<Carreira />
-<Habilidades/>
+<About  />
+<Carreira  />
+<Habilidades  />
 <!-- <Projetos/> -->
 
 <Contact/>
@@ -112,9 +112,11 @@ export const options: ISourceOptions = {
 	.personal_description_container{
 		font-family: 'Koulen';
 		display: flex;
-		padding: 8px;
+		text-shadow: 2px 2px #000;
+
 		flex-direction: column;
 		align-items: center;
+		margin: 0 0 0 4vw;
 		justify-content: center;
 		z-index: 1;
 	}
@@ -155,6 +157,10 @@ export const options: ISourceOptions = {
 	
 		cursor: pointer;
 		transition: 300ms;
+	}
+	.main_icons_list  li a:active,.main_icons_list  li a:visited,.main_icons_list  li a:link{
+		color: white;
+		text-shadow: 2px 2px #000;
 	}
 	.main_content_container ul{
 		list-style: none;

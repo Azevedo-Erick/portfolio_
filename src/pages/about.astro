@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<div class="index_container">
+<div class="about_container" id="about">
   <h3 class="title">Sobre mim</h3>
   <div class="main_content_container">
     <div class="main_content_card"></div>
@@ -70,7 +70,21 @@ import Layout from "../layouts/Layout.astro";
 	text-align: justify;
     font-family: "Kantumruy Pro", sans-serif;
   }
-  .index_container {
+  .main_content_text > p{
+    margin: 10px 0 20px 5px;
+  }
+  .main_content_text > p::before {
+  content: "";
+  position: relative;
+  left: -2px;
+  width: 4px;
+  height: 4px;
+  
+  display: inline-block;
+  border-radius: 100%;
+  background-color: #ffffff;
+}
+  .about_container {
     background-color: #1A1A36;
     color: white;
     display: flex;
