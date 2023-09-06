@@ -49,9 +49,9 @@ import Card from "../components/Card.astro";
   .contact_container {
     display: flex;
     flex-direction: column;
-    background-color: #131313;
     padding: 16px;
     margin-bottom: 20px;
+    background-color: var(--bg-secondary);
     border-radius: 15px;
     justify-content: space-between;
   }
@@ -59,6 +59,7 @@ import Card from "../components/Card.astro";
 	display: flex;
 	justify-content: space-between;
 	padding: 16px;
+	list-style: none;
 	flex-direction: row;
   }
   .icons_container li a:active,
@@ -67,7 +68,8 @@ import Card from "../components/Card.astro";
     color: #fff;
   }
   .contato_container {
-    background-image: radial-gradient(var(--bg-primary), var(--bg-secondary));
+    background-color: var(--bg-primary);
+
     padding: 16px;
     color: white;
     display: flex;
